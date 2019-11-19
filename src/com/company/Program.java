@@ -39,7 +39,7 @@ public class Program {
         return newArrayList;
     }
     private void saveArrayList(ArrayList<String> arrayList){
-        System.out.println("Enter save file name (complete path if in another folder:");
+        System.out.println("Enter save file name (complete path if in another folder):");
         String fileName = input.nextLine();
         FileUtils.saveText(fileName, arrayList, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
     }
