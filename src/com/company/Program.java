@@ -16,20 +16,16 @@ public class Program {
     public void run() {
         originalArrayList = loadArrayList();
         modifiedArrayList = splitArrayList(originalArrayList);
-        for (String string :
-                modifiedArrayList) {
-            System.out.println(string);
-        }
 
-        //saveArrayList(modifiedArrayList);
+        saveArrayList(modifiedArrayList);
         System.out.printf("" +
                 "Files saved.\n" +
-                "Press enter to exit");
+                "Press enter to exit...\n");
         input.nextLine();
     }
 
     private ArrayList<String> loadArrayList(){
-        System.out.println("Enter filename:");
+        System.out.println("Enter filename (complete path if in another folder):");
         String fileName = input.nextLine();
         return (ArrayList<String>)FileUtils.loadText(fileName);
     }
@@ -43,7 +39,7 @@ public class Program {
         return newArrayList;
     }
     private void saveArrayList(ArrayList<String> arrayList){
-        System.out.println("Enter filename:");
+        System.out.println("Enter save file name (complete path if in another folder:");
         String fileName = input.nextLine();
         FileUtils.saveText(fileName, arrayList, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
     }
